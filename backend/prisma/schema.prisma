@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      Boolean  @default(false)
+  isActive         Boolean  @default(false)
+  activationCode   String?
+  activationExpires DateTime?
+  bookings  Booking[]
+  reviews   Review[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model Tour {
+  id          String   @id @default(uuid())
+  destination String
+  duration    Int
+  price       Float
+  tourType    String
+  bookings    Booking[]
+  reviews     Review[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  isDeleted   Boolean  @default(false)
+}
+
+model Booking {
+  id        String   @id @default(uuid())
+  userId    String
+  tourId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  tour Tour @relation(fields: [tourId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  userId    String
+  tourId    String
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  tour Tour @relation(fields: [tourId], references: [id])
+}
+

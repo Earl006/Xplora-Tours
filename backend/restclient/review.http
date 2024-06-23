@@ -1,0 +1,25 @@
+### CREATE A REVIEW
+POST http://localhost:3000/api/reviews/create
+Content-Type: application/json
+
+{
+  "userId": "7cbd1755-109a-4309-8ae0-bd7d58a402b1",
+  "tourId": "9aa80f63-1e67-4e7b-9593-b720588e2bcf",
+  "rating": 5,
+  "comment" :"This was an amazing tour, Thank you Xplora team for making my summer vacation memorable"
+}
+
+### GET ALL REVIEWS
+GET http://localhost:3000/api/reviews
+
+### GET A REVIEW
+GET http://localhost:3000/api/reviews/da7984ff-6302-4088-947e-1a210b4c2da9
+
+### UPDATE A REVIEW
+PATCH http://localhost:3000/api/reviews/update/da7984ff-6302-4088-947e-1a210b4c2da9
+Content-Type: application/json
+
+{
+  "rating": 4,
+  "comment" :"This was an amazing tour, Thank you Xplora team for making my summer vacation memorable. I would have given 5 stars but the tour guide was not that good"
+}

@@ -1,0 +1,51 @@
+### REGISTER A USER
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+    "name": "Angela Kolwa",
+    "email": "angelakolwa@gmail.com",
+    "password": "password"
+}
+
+### LOGIN A USER
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email": "angelakolwa@gmail.com",
+    "password": "password"
+}
+
+### GET USER PROFILE
+GET http://localhost:3000/api/user/3cae4874-2bc2-47ad-8a7f-d0d22ee28975
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzY2FlNDg3NC0yYmMyLTQ3YWQtOGE3Zi1kMGQyMmVlMjg5NzUiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzE5MTM0MTkxLCJleHAiOjE3MTkyMjA1OTF9.283DCItx2QnEQu93BVUzuUlNT5rWDhYjnsP-GThFTNg
+
+### ACTIVATE USER ACCOUNT
+POST http://localhost:3000/api/user/activate
+Content-Type: application/json
+
+{
+    "email": "angelakolwa@gmail.com",
+    "activationCode": "7965"
+}
+
+### RESET USER PASSWORD
+POST http://localhost:3000/api/user/reset-password
+Content-Type: application/json
+
+{
+    "email": "angelakolwa@gmail.com",
+    "newPassword": "password123"
+}
+
+### UPDATE USER PROFILE
+PUT http://localhost:3000/api/user/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzY2FlNDg3NC0yYmMyLTQ3YWQtOGE3Zi1kMGQyMmVlMjg5NzUiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzE5MTM0MTkxLCJleHAiOjE3MTkyMjA1OTF9.283DCItx2QnEQu93BVUzuUlNT5rWDhYjnsP-GThFTNg
+
+{
+    "name": "Angela Kolwa",
+    "email": "angelakolwa@yopmail.com",
+    "password": "password"
+}

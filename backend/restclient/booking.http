@@ -1,0 +1,22 @@
+### CREATE BOOKING
+POST http://localhost:3000/api/bookings/create
+Content-Type: application/json
+
+{
+    "tourId": "9aa80f63-1e67-4e7b-9593-b720588e2bcf",
+    "userId": "d3baeb07-15ed-4807-9857-42a3f0900aa0"
+}
+
+### GET BOOKING BY ID
+GET http://localhost:3000/api/bookings/ab191020-1d73-4977-b0f6-8e61a0ad5e97
+
+### GET ALL BOOKINGS
+GET http://localhost:3000/api/bookings
+
+### UPDATE BOOKING
+PATCH http://localhost:3000/api/bookings/update/ab191020-1d73-4977-b0f6-8e61a0ad5e97
+Content-Type: application/json
+
+{
+  "tourId": "ec266faf-8b74-4d89-b306-5aeb6f6144d5"
+}

@@ -1,0 +1,34 @@
+###CREATE A NEW ROUTE
+POST http://localhost:3000/api/tours/create
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZDUzNGQwNi1jMzc3LTRkNzYtOGE4YS1hMmYxNGM5MGI2MjQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MTkxMzE1OTIsImV4cCI6MTcxOTIxNzk5Mn0.FHmZnF5edNj1gtjHb9aNJNsbrqNekicjZ2cb5UYTxYo
+Content-Type: application/json
+
+    {
+        "destination": "Game Park",
+        "price": 3300,
+        "duration": 5,
+        "tourType": "family"
+    }
+
+
+###GET ALL TOURS
+GET http://localhost:3000/api/tours/all
+
+###GET A SINGLE TOUR
+GET http://localhost:3000/api/tours/9aa80f63-1e67-4e7b-9593-b720588e2bcf
+
+###UPDATE A TOUR
+PUT http://localhost:3000/api/tours/9aa80f63-1e67-4e7b-9593-b720588e2bcf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4OWNkNzk5Ni01YWVkLTQxYjgtOTU5OC00ZTcyM2QxNzliYzAiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzE4OTc4OTM1LCJleHAiOjE3MTkwNjUzMzV9.fT0jNdis2BLdTM4ANbnV-osj5BfFLMGdBf7zPzimNWA
+Content-Type: application/json
+
+    {
+        "destination": "Camp Ndunda Falls",
+        "price": 3000,
+        "duration": 3,
+        "tourType": "family"
+    }
+
+###DELETE A TOUR
+DELETE http://localhost:3000/api/tours/79bf722e-7ecf-40fd-91bd-6abb33012ebc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjZDUzNGQwNi1jMzc3LTRkNzYtOGE4YS1hMmYxNGM5MGI2MjQiLCJyb2xlIjp0cnVlLCJpYXQiOjE3MTg5NzAwMTcsImV4cCI6MTcxOTA1NjQxN30.YhWb5lvZyzL0yMx3pZowwrfuIM1nFDOc96GKEGXkGKA
